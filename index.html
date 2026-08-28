@@ -1,12 +1,239 @@
-<section id="products">
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h2 class="title">Our Products 🛒</h2>
+<title>Vitthal Krupa Kirana Store</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f7faf7;
+  color:#1f2937;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#166534;
+  padding:15px 10px;
+  text-align:center;
+}
+
+nav h2{
+  color:white;
+  margin-bottom:10px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:5px 7px;
+  font-size:14px;
+}
+
+.hero{
+  min-height:75vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px 20px;
+  background:linear-gradient(135deg,#16a34a,#84cc16);
+  color:white;
+}
+
+.hero h1{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:650px;
+  font-size:18px;
+  line-height:1.7;
+}
+
+.btn{
+  display:inline-block;
+  margin:15px 5px 0;
+  padding:13px 24px;
+  background:#166534;
+  color:white;
+  text-decoration:none;
+  border-radius:9px;
+  font-weight:bold;
+}
+
+section{
+  padding:55px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  font-size:30px;
+  margin-bottom:30px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:25px 20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,0.08);
+}
+
+.card h3{
+  margin-bottom:15px;
+}
+
+.card p{
+  margin:10px 0;
+  color:#475467;
+}
+
+.about{
+  text-align:center;
+  max-width:750px;
+  margin:auto;
+  line-height:1.8;
+}
+
+.info{
+  text-align:center;
+  line-height:2;
+}
+
+.contact{
+  text-align:center;
+}
+
+footer{
+  background:#14532d;
+  color:white;
+  text-align:center;
+  padding:25px;
+  line-height:1.8;
+}
+
+@media(max-width:700px){
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  nav a{
+    font-size:13px;
+    margin:4px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<h2>🛒 Vitthal Krupa Kirana Store</h2>
+
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#products">Products</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<h1>Vitthal Krupa Kirana Store 🛒</h1>
+
+<p>
+आपल्या रोजच्या गरजेच्या किराणा मालासाठी
+आपले विश्वासू दुकान.
+</p>
+
+<a href="#products" class="btn">
+🛍️ Products पहा
+</a>
+
+<a href="#contact" class="btn">
+📞 Contact Us
+</a>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="title">आमच्या सेवा</h2>
 
 <div class="cards">
 
-<div class="card product">
+<div class="card">
+<h3>🛒 किराणा माल</h3>
+<p>रोजच्या गरजेच्या विविध किराणा वस्तू.</p>
+</div>
 
-<h3>🌾 किराणा माल (Grocery)</h3>
+<div class="card">
+<h3>🌶️ मसाले</h3>
+<p>विविध प्रकारचे मसाले व चटणी मसाले.</p>
+</div>
+
+<div class="card">
+<h3>🥤 Cold Drinks</h3>
+<p>विविध प्रकारचे थंड पेय उपलब्ध.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<h2 class="title">आमची उत्पादने 🛍️</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🌾 किराणा माल</h3>
 
 <p>🍚 तांदूळ (Rice)</p>
 <p>🌾 गहू (Wheat)</p>
@@ -16,10 +243,134 @@
 <p>🧂 मीठ (Salt)</p>
 <p>🍪 बिस्किटे (Biscuits)</p>
 <p>🧴 साबण (Soap)</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🌶️ चटणी व मसाले</h3>
+
 <p>🌶️ चटणी मसाला (Chutney Masala)</p>
+<p>🌶️ गटणी मसाला (Gatni Masala)</p>
+<p>🌶️ लाल तिखट (Red Chilli Powder)</p>
+<p>🟡 हळद (Turmeric Powder)</p>
+<p>🌿 धणे पावडर (Coriander Powder)</p>
+<p>🌿 जिरे पावडर (Cumin Powder)</p>
+<p>🧂 गरम मसाला (Garam Masala)</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🧴 दैनंदिन वस्तू</h3>
+
+<p>🧴 साबण (Soap)</p>
+<p>🧼 डिटर्जंट (Detergent)</p>
+<p>🪥 टूथपेस्ट (Toothpaste)</p>
+<p>🧴 शॅम्पू (Shampoo)</p>
+<p>🧹 घरगुती वस्तू (Household Items)</p>
+<p>🥤 कोल्ड ड्रिंक्स (Cold Drinks)</p>
 
 </div>
 
 </div>
 
 </section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="title">आमच्या दुकानाबद्दल</h2>
+
+<p class="about">
+
+🙏 Vitthal Krupa Kirana Store मध्ये
+रोजच्या गरजेच्या विविध किराणा वस्तू,
+मसाले, चटणी मसाले आणि इतर दैनंदिन
+वापराच्या वस्तू उपलब्ध आहेत.
+
+चांगली सेवा, योग्य दर आणि ग्राहकांचा विश्वास
+हेच आमचे ध्येय आहे.
+
+आपल्या सेवेत सदैव तत्पर! 🛒
+
+</p>
+
+</section>
+
+
+<!-- STORE INFORMATION -->
+
+<section>
+
+<h2 class="title">दुकानाची माहिती</h2>
+
+<div class="info">
+
+<p>🏪 <b>दुकान:</b> Vitthal Krupa Kirana Store</p>
+
+<p>👤 <b>मालक:</b> Shahaji Ramchandra Hatkar</p>
+
+<p>
+📍 <b>पत्ता:</b>
+At- Kapileshwar, Tal- Radhanagari,
+Dist- Kolhapur, Maharashtra
+</p>
+
+<p>🛒 <b>प्रकार:</b> Kirana & Daily Grocery Store</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact">
+
+<h2 class="title">संपर्क करा 📞</h2>
+
+<p>
+दुकानाबद्दल अधिक माहिती किंवा चौकशीसाठी
+आमच्याशी संपर्क करा.
+</p>
+
+<p>
+📱 <b>9049355633</b>
+</p>
+
+<a href="tel:9049355633" class="btn">
+📞 Call Us
+</a>
+
+<a href="https://wa.me/919049355633" class="btn">
+💬 WhatsApp
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>🛒 Vitthal Krupa Kirana Store</p>
+
+<p>Shahaji Ramchandra Hatkar</p>
+
+<p>Kapileshwar, Radhanagari, Kolhapur</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>
