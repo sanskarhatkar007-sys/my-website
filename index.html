@@ -7,7 +7,6 @@
 <title>Vitthal Krupa Kirana Store</title>
 
 <style>
-
 *{
   margin:0;
   padding:0;
@@ -23,7 +22,6 @@ body{
 }
 
 /* NAVBAR */
-
 nav{
   position:sticky;
   top:0;
@@ -56,7 +54,6 @@ nav a:hover{
 }
 
 /* HERO */
-
 .hero{
   min-height:85vh;
   display:flex;
@@ -65,13 +62,10 @@ nav a:hover{
   align-items:center;
   text-align:center;
   padding:40px 18px;
-
   background:
   radial-gradient(circle at top left,#ffe7b3,transparent 35%),
   linear-gradient(135deg,#fff4df,#ffe0a6);
 }
-
-/* ORIGINAL PHOTO - FULL PHOTO */
 
 .shop-photo{
   width:100%;
@@ -141,7 +135,6 @@ nav a:hover{
 }
 
 /* SECTIONS */
-
 section{
   max-width:1100px;
   margin:auto;
@@ -164,7 +157,6 @@ section{
 }
 
 /* WELCOME */
-
 .offer{
   max-width:900px;
   margin:auto;
@@ -182,7 +174,6 @@ section{
 }
 
 /* CARDS */
-
 .cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -201,6 +192,7 @@ section{
 
 .card:hover{
   transform:translateY(-6px);
+  box-shadow:0 14px 32px rgba(65,40,15,.14);
 }
 
 .icon{
@@ -220,7 +212,6 @@ section{
 }
 
 /* PRODUCTS */
-
 #products{
   max-width:none;
   background:#fff4e3;
@@ -229,6 +220,23 @@ section{
 #products .cards{
   max-width:1100px;
   margin:auto;
+}
+
+.product-card{
+  position:relative;
+}
+
+.product-icon{
+  width:90px;
+  height:90px;
+  margin:0 auto 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff3d6;
+  border-radius:50%;
+  font-size:50px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 .badge{
@@ -242,8 +250,52 @@ section{
   font-weight:bold;
 }
 
-/* SEARCH */
+.price-info{
+  background:#fff8ea;
+  padding:10px;
+  border-radius:10px;
+  margin:15px 0;
+  color:#8a550e;
+  font-size:14px;
+}
 
+.product-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:10px 0;
+  border-bottom:1px solid #f0e3d0;
+}
+
+.product-name{
+  text-align:left;
+  flex:1;
+  color:#4c4036;
+  font-weight:500;
+}
+
+.add-btn,
+.price-btn{
+  border:0;
+  padding:7px 10px;
+  border-radius:8px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.add-btn{
+  background:#e87516;
+}
+
+.price-btn{
+  background:#6d4c41;
+  margin-top:4px;
+}
+
+/* SEARCH */
 .search-box{
   max-width:600px;
   margin:0 auto 35px;
@@ -259,21 +311,7 @@ section{
   outline:none;
 }
 
-/* ADD BUTTON */
-
-.add-btn{
-  border:0;
-  padding:7px 12px;
-  margin-left:5px;
-  border-radius:8px;
-  background:#f08a24;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-}
-
 /* CART */
-
 .cart{
   max-width:800px;
   margin:45px auto 0;
@@ -353,7 +391,6 @@ section{
 }
 
 /* ABOUT */
-
 .about{
   max-width:820px;
   margin:auto;
@@ -364,7 +401,6 @@ section{
 }
 
 /* REVIEWS */
-
 #reviews{
   background:#fffdf9;
 }
@@ -376,7 +412,6 @@ section{
 }
 
 /* INFO */
-
 .info{
   max-width:760px;
   margin:auto;
@@ -394,7 +429,6 @@ section{
 }
 
 /* CONTACT */
-
 #contact{
   max-width:none;
   background:#2b2118;
@@ -423,7 +457,6 @@ section{
 }
 
 /* FOOTER */
-
 footer{
   background:#17110c;
   color:white;
@@ -438,7 +471,6 @@ footer{
 }
 
 /* MOBILE */
-
 @media(max-width:700px){
 
   nav h2{
@@ -497,6 +529,14 @@ footer{
     align-items:flex-start;
   }
 
+  .product-row{
+    flex-wrap:wrap;
+  }
+
+  .add-btn{
+    margin-left:auto;
+  }
+
 }
 
 </style>
@@ -539,7 +579,7 @@ alt="Vitthal Krupa Kirana Store">
 </h2>
 
 <p>
-किराणा माल • मसाले • चटणी मसाला • Cold Drinks • दैनंदिन वस्तू
+किराणा माल • चटणी मसाला • मसाले • Cold Drinks • दैनंदिन वस्तू
 </p>
 
 <div class="open">
@@ -581,7 +621,9 @@ alt="Vitthal Krupa Kirana Store">
 
 <section id="services">
 
-<h2 class="title">आमच्या सेवा</h2>
+<h2 class="title">
+आमच्या सेवा
+</h2>
 
 <div class="title-line"></div>
 
@@ -640,6 +682,7 @@ alt="Vitthal Krupa Kirana Store">
 
 <div class="title-line"></div>
 
+
 <div class="search-box">
 
 <input
@@ -656,199 +699,172 @@ onkeyup="searchProducts()">
 
 <!-- KIRANA -->
 
-<div class="card product">
+<div class="card product product-card">
 
-<div class="icon">🌾</div>
+<div class="product-icon">
+🌾
+</div>
 
-<span class="badge">KIRANA</span>
+<span class="badge">
+KIRANA
+</span>
 
-<h3>किराणा माल</h3>
+<h3>
+किराणा माल
+</h3>
 
-<p>
-🍚 तांदूळ (Rice)
-<button class="add-btn"
-onclick="addToCart('तांदूळ')">
-Add
-</button>
-</p>
+<div class="price-info">
+💰 किंमत माहितीसाठी WhatsApp वर विचारू शकता
+</div>
 
-<p>
-🌾 गहू (Wheat)
-<button class="add-btn"
-onclick="addToCart('गहू')">
-Add
-</button>
-</p>
 
-<p>
-🫘 तूर डाळ (Toor Dal)
-<button class="add-btn"
-onclick="addToCart('तूर डाळ')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🍚 तांदूळ (Rice)</span>
+<button class="add-btn" onclick="addToCart('तांदूळ')">Add</button>
+</div>
 
-<p>
-🍬 साखर (Sugar)
-<button class="add-btn"
-onclick="addToCart('साखर')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🌾 गहू (Wheat)</span>
+<button class="add-btn" onclick="addToCart('गहू')">Add</button>
+</div>
 
-<p>
-🛢️ खाद्यतेल (Cooking Oil)
-<button class="add-btn"
-onclick="addToCart('खाद्यतेल')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🫘 तूर डाळ (Toor Dal)</span>
+<button class="add-btn" onclick="addToCart('तूर डाळ')">Add</button>
+</div>
 
-<p>
-🧂 मीठ (Salt)
-<button class="add-btn"
-onclick="addToCart('मीठ')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🍬 साखर (Sugar)</span>
+<button class="add-btn" onclick="addToCart('साखर')">Add</button>
+</div>
 
-<p>
-🍪 बिस्किटे (Biscuits)
-<button class="add-btn"
-onclick="addToCart('बिस्किटे')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🛢️ खाद्यतेल (Cooking Oil)</span>
+<button class="add-btn" onclick="addToCart('खाद्यतेल')">Add</button>
+</div>
 
-<p>
-🧴 साबण (Soap)
-<button class="add-btn"
-onclick="addToCart('साबण')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🧂 मीठ (Salt)</span>
+<button class="add-btn" onclick="addToCart('मीठ')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🍪 बिस्किटे (Biscuits)</span>
+<button class="add-btn" onclick="addToCart('बिस्किटे')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧴 साबण (Soap)</span>
+<button class="add-btn" onclick="addToCart('साबण')">Add</button>
+</div>
 
 </div>
 
 
 <!-- MASALA -->
 
-<div class="card product">
+<div class="card product product-card">
 
-<div class="icon">🌶️</div>
+<div class="product-icon">
+🌶️
+</div>
 
-<span class="badge">MASALA</span>
+<span class="badge">
+MASALA
+</span>
 
-<h3>चटणी व मसाले</h3>
+<h3>
+चटणी व मसाले
+</h3>
 
-<p>
-🌶️ चटणी मसाला
-<button class="add-btn"
-onclick="addToCart('चटणी मसाला')">
-Add
-</button>
-</p>
+<div class="price-info">
+💰 किंमत माहितीसाठी WhatsApp वर विचारू शकता
+</div>
 
-<p>
-🌶️ लाल तिखट
-<button class="add-btn"
-onclick="addToCart('लाल तिखट')">
-Add
-</button>
-</p>
 
-<p>
-🟡 हळद
-<button class="add-btn"
-onclick="addToCart('हळद')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🌶️ चटणी मसाला</span>
+<button class="add-btn" onclick="addToCart('चटणी मसाला')">Add</button>
+</div>
 
-<p>
-🌿 धणे पावडर
-<button class="add-btn"
-onclick="addToCart('धणे पावडर')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🌶️ लाल तिखट</span>
+<button class="add-btn" onclick="addToCart('लाल तिखट')">Add</button>
+</div>
 
-<p>
-🌿 जिरे पावडर
-<button class="add-btn"
-onclick="addToCart('जिरे पावडर')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🟡 हळद</span>
+<button class="add-btn" onclick="addToCart('हळद')">Add</button>
+</div>
 
-<p>
-🧂 गरम मसाला
-<button class="add-btn"
-onclick="addToCart('गरम मसाला')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🌿 धणे पावडर</span>
+<button class="add-btn" onclick="addToCart('धणे पावडर')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🌿 जिरे पावडर</span>
+<button class="add-btn" onclick="addToCart('जिरे पावडर')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧂 गरम मसाला</span>
+<button class="add-btn" onclick="addToCart('गरम मसाला')">Add</button>
+</div>
 
 </div>
 
 
-<!-- DAILY USE -->
+<!-- DAILY PRODUCTS -->
 
-<div class="card product">
+<div class="card product product-card">
 
-<div class="icon">🧴</div>
+<div class="product-icon">
+🥤
+</div>
 
-<span class="badge">DAILY USE</span>
+<span class="badge">
+DAILY USE
+</span>
 
-<h3>दैनंदिन वस्तू</h3>
+<h3>
+दैनंदिन वस्तू
+</h3>
 
-<p>
-🧴 साबण
-<button class="add-btn"
-onclick="addToCart('साबण')">
-Add
-</button>
-</p>
+<div class="price-info">
+💰 किंमत माहितीसाठी WhatsApp वर विचारू शकता
+</div>
 
-<p>
-🧼 डिटर्जंट
-<button class="add-btn"
-onclick="addToCart('डिटर्जंट')">
-Add
-</button>
-</p>
 
-<p>
-🪥 टूथपेस्ट
-<button class="add-btn"
-onclick="addToCart('टूथपेस्ट')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🧴 साबण</span>
+<button class="add-btn" onclick="addToCart('साबण')">Add</button>
+</div>
 
-<p>
-🧴 शॅम्पू
-<button class="add-btn"
-onclick="addToCart('शॅम्पू')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🧼 डिटर्जंट</span>
+<button class="add-btn" onclick="addToCart('डिटर्जंट')">Add</button>
+</div>
 
-<p>
-🥤 Cold Drinks
-<button class="add-btn"
-onclick="addToCart('Cold Drinks')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🪥 टूथपेस्ट</span>
+<button class="add-btn" onclick="addToCart('टूथपेस्ट')">Add</button>
+</div>
 
-<p>
-🧹 घरगुती वस्तू
-<button class="add-btn"
-onclick="addToCart('घरगुती वस्तू')">
-Add
-</button>
-</p>
+<div class="product-row">
+<span class="product-name">🧴 शॅम्पू</span>
+<button class="add-btn" onclick="addToCart('शॅम्पू')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🥤 Cold Drinks</span>
+<button class="add-btn" onclick="addToCart('Cold Drinks')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧹 घरगुती वस्तू</span>
+<button class="add-btn" onclick="addToCart('घरगुती वस्तू')">Add</button>
+</div>
 
 </div>
 
@@ -904,8 +920,8 @@ onclick="clearCart()">
 
 <p class="about">
 
-🙏 <b>Vitthal Krupa Kirana Store</b> हे
-आपल्या परिसरातील रोजच्या गरजेच्या
+🙏 <b>Vitthal Krupa Kirana Store</b>
+हे आपल्या परिसरातील रोजच्या गरजेच्या
 वस्तूंसाठी विश्वासू किराणा दुकान आहे.
 
 <br><br>
@@ -981,7 +997,7 @@ onclick="clearCart()">
 </section>
 
 
-<!-- STORE INFORMATION -->
+<!-- INFORMATION -->
 
 <section>
 
@@ -1037,8 +1053,8 @@ Kirana & Daily Grocery Store
 <div class="title-line"></div>
 
 <p>
-उत्पादनांची माहिती किंवा Order साठी
-आमच्याशी संपर्क करा.
+उत्पादनांची माहिती, किंमत किंवा
+Order साठी आमच्याशी संपर्क करा.
 </p>
 
 <p class="phone">
@@ -1106,8 +1122,6 @@ Shahaji Ramchandra Hatkar
 
 </footer>
 
-
-<!-- JAVASCRIPT -->
 
 <script>
 
@@ -1220,7 +1234,7 @@ function decrease(product){
 }
 
 
-/* CLEAR */
+/* CLEAR CART */
 
 function clearCart(){
 
@@ -1242,7 +1256,7 @@ function orderWhatsApp(){
   if(products.length === 0){
 
     alert(
-    "कृपया आधी Cart मध्ये Product add करा."
+      "कृपया आधी Cart मध्ये Product add करा."
     );
 
     return;
