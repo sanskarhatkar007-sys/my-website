@@ -3,1026 +3,861 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Vitthal Krupa Kirana Store | Premium Grocery</title>
+<title>Vitthal Krupa Kirana Store</title>
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#faf8f3;
-    color:#24211e;
-    line-height:1.6;
+  font-family:Arial,sans-serif;
+  background:#fffaf3;
+  color:#29231f;
 }
-
-a{
-    text-decoration:none;
-}
-
-button{
-    font-family:inherit;
-}
-
-/* =========================
-   VARIABLES
-========================= */
 
 :root{
-    --dark:#17130f;
-    --brown:#4b2e1d;
-    --orange:#e88922;
-    --gold:#f5b544;
-    --cream:#fff8ea;
-    --light:#f7f1e7;
-    --green:#159447;
-    --white:#ffffff;
-    --text:#4e4841;
-    --shadow:0 15px 45px rgba(44,30,18,.10);
+  --brown:#4b2e1d;
+  --orange:#e87918;
+  --gold:#f4b63f;
+  --cream:#fff5e4;
+  --green:#159447;
+  --white:#fff;
+  --dark:#19130f;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar{
-    position:sticky;
-    top:0;
-    z-index:9999;
-    background:rgba(23,19,15,.96);
-    backdrop-filter:blur(12px);
-    box-shadow:0 5px 25px rgba(0,0,0,.18);
-}
-
-.nav-inner{
-    max-width:1200px;
-    margin:auto;
-    padding:15px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(25,19,15,.97);
+  padding:14px 10px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
 .logo{
-    color:white;
-    font-size:21px;
-    font-weight:800;
-    white-space:nowrap;
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:9px;
 }
 
 .logo span{
-    color:var(--gold);
+  color:var(--gold);
 }
 
-.nav-links{
-    display:flex;
-    gap:7px;
-    flex-wrap:wrap;
-    justify-content:center;
+nav a{
+  display:inline-block;
+  color:white;
+  text-decoration:none;
+  padding:7px 11px;
+  margin:2px;
+  border-radius:20px;
+  font-size:13px;
+  transition:.3s;
 }
 
-.nav-links a{
-    color:#eee;
-    padding:8px 13px;
-    border-radius:20px;
-    font-size:13px;
-    transition:.3s;
+nav a:hover{
+  background:var(--orange);
 }
 
-.nav-links a:hover{
-    background:var(--orange);
-    color:white;
-}
-
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero{
-    min-height:calc(100vh - 70px);
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    align-items:center;
-    gap:50px;
-    max-width:1250px;
-    margin:auto;
-    padding:65px 25px;
-
-    background:
-    radial-gradient(circle at 10% 10%,#ffe7b7,transparent 30%),
-    radial-gradient(circle at 90% 90%,#ffe2b1,transparent 30%);
+  min-height:88vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:40px;
+  padding:55px 6%;
+  background:
+  radial-gradient(circle at top left,#ffe8b9,transparent 35%),
+  linear-gradient(135deg,#fff8ec,#ffe4b0);
 }
 
-.hero-content{
-    animation:fadeUp 1s ease;
+.hero-text{
+  animation:up 1s ease;
 }
 
-.small-label{
-    display:inline-block;
-    padding:7px 15px;
-    background:#fff0d0;
-    color:#9a5b0a;
-    border-radius:30px;
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:18px;
+.badge{
+  display:inline-block;
+  background:#fff0cf;
+  color:#96580b;
+  padding:8px 16px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:58px;
-    line-height:1.08;
-    color:var(--brown);
-    margin-bottom:18px;
+  font-size:55px;
+  line-height:1.1;
+  color:var(--brown);
+  margin-bottom:15px;
 }
 
 .hero h1 span{
-    color:var(--orange);
+  color:var(--orange);
 }
 
-.hero-subtitle{
-    font-size:20px;
-    color:#66594d;
-    max-width:620px;
-    margin-bottom:25px;
+.hero h2{
+  color:#57483d;
+  font-size:21px;
+  margin-bottom:15px;
 }
 
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+.hero p{
+  color:#70645a;
+  font-size:17px;
+  max-width:600px;
+  margin-bottom:20px;
 }
 
-.primary-btn,
-.secondary-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:14px 22px;
-    border-radius:12px;
-    font-weight:bold;
-    transition:.3s;
+.open-time{
+  display:inline-block;
+  background:white;
+  padding:11px 17px;
+  border-radius:25px;
+  color:#79500e;
+  font-weight:bold;
+  box-shadow:0 5px 18px rgba(0,0,0,.07);
 }
 
-.primary-btn{
-    background:var(--orange);
-    color:white;
-    box-shadow:0 10px 25px rgba(232,137,34,.25);
+.buttons{
+  margin-top:23px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-.primary-btn:hover{
-    transform:translateY(-3px);
-    background:#cb6d0e;
+.btn{
+  display:inline-block;
+  padding:13px 21px;
+  border-radius:11px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
 }
 
-.secondary-btn{
-    background:white;
-    color:var(--brown);
-    border:1px solid #ead9c2;
+.btn-main{
+  background:var(--orange);
+  color:white;
 }
 
-.secondary-btn:hover{
-    transform:translateY(-3px);
-    border-color:var(--orange);
+.btn-main:hover{
+  transform:translateY(-3px);
+  background:#c9630d;
 }
 
-.hero-info{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    margin-top:28px;
+.btn-light{
+  background:white;
+  color:var(--brown);
+  border:1px solid #e6d2b4;
 }
 
-.hero-info div{
-    background:white;
-    padding:12px 15px;
-    border-radius:12px;
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-    font-size:13px;
+.btn-light:hover{
+  transform:translateY(-3px);
 }
 
-/* =========================
-   HERO PHOTO
-========================= */
-
-.hero-photo{
-    position:relative;
-    animation:fadeRight 1s ease;
+/* HERO IMAGE */
+.hero-image{
+  position:relative;
+  animation:right 1s ease;
 }
 
-.photo-frame{
-    background:white;
-    padding:10px;
-    border-radius:28px;
-    box-shadow:0 25px 60px rgba(45,28,13,.18);
+.photo-box{
+  background:white;
+  padding:10px;
+  border-radius:25px;
+  box-shadow:0 20px 55px rgba(60,35,10,.2);
 }
 
-.photo-frame img{
-    display:block;
-    width:100%;
-    height:auto;
-    max-height:620px;
-    object-fit:contain;
-    border-radius:20px;
+.photo-box img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  object-fit:contain;
 }
 
-.photo-badge{
-    position:absolute;
-    right:-15px;
-    bottom:25px;
-    background:var(--dark);
-    color:white;
-    padding:15px 18px;
-    border-radius:15px;
-    box-shadow:0 12px 30px rgba(0,0,0,.25);
+.open-badge{
+  position:absolute;
+  right:-12px;
+  bottom:20px;
+  background:var(--dark);
+  color:white;
+  padding:13px 17px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
-.photo-badge strong{
-    color:var(--gold);
-    display:block;
-    font-size:18px;
+.open-badge strong{
+  color:var(--gold);
+  display:block;
+  font-size:18px;
 }
 
-/* =========================
-   GENERAL
-========================= */
-
-.section{
-    padding:85px 20px;
+/* COMMON */
+section{
+  padding:75px 20px;
 }
 
-.section-inner{
-    max-width:1150px;
-    margin:auto;
+.container{
+  max-width:1150px;
+  margin:auto;
 }
 
-.section-heading{
-    text-align:center;
-    margin-bottom:50px;
+.heading{
+  text-align:center;
+  margin-bottom:40px;
 }
 
-.section-heading .eyebrow{
-    color:var(--orange);
-    font-size:13px;
-    font-weight:bold;
-    letter-spacing:2px;
-    text-transform:uppercase;
+.heading small{
+  color:var(--orange);
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
-.section-heading h2{
-    color:var(--brown);
-    font-size:39px;
-    margin:8px 0;
-}
-
-.section-heading p{
-    max-width:650px;
-    margin:auto;
-    color:#71675e;
+.heading h2{
+  font-size:36px;
+  color:var(--brown);
+  margin:8px 0;
 }
 
 .line{
-    width:60px;
-    height:4px;
-    background:var(--orange);
-    border-radius:10px;
-    margin:15px auto;
+  width:60px;
+  height:4px;
+  background:var(--orange);
+  border-radius:10px;
+  margin:12px auto;
 }
 
-/* =========================
-   STATS
-========================= */
+.heading p{
+  color:#71665c;
+  max-width:650px;
+  margin:auto;
+}
 
+/* STATS */
 .stats{
-    background:var(--dark);
-    color:white;
+  padding:30px 20px;
+  background:var(--dark);
+  color:white;
 }
 
 .stats-grid{
-    max-width:1050px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
 }
 
 .stat{
-    text-align:center;
-    padding:25px;
-    border-right:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  padding:15px;
+  border-right:1px solid rgba(255,255,255,.12);
 }
 
 .stat:last-child{
-    border:none;
+  border:none;
 }
 
 .stat-icon{
-    font-size:30px;
+  font-size:28px;
 }
 
 .stat h3{
-    color:var(--gold);
-    font-size:25px;
-    margin:5px 0;
+  color:var(--gold);
+  font-size:22px;
 }
 
 .stat p{
-    color:#ddd0c1;
-    font-size:13px;
+  color:#ddd0c1;
+  font-size:13px;
 }
 
-/* =========================
-   SERVICES
-========================= */
-
+/* SERVICES */
 .services{
-    background:#fff;
+  background:white;
 }
 
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
-.service-card{
-    background:var(--cream);
-    padding:35px 25px;
-    border-radius:22px;
-    text-align:center;
-    border:1px solid #f0dfc6;
-    transition:.35s;
+.card{
+  background:var(--cream);
+  border:1px solid #efddc2;
+  border-radius:20px;
+  padding:28px 20px;
+  text-align:center;
+  transition:.3s;
 }
 
-.service-card:hover{
-    transform:translateY(-8px);
-    box-shadow:var(--shadow);
+.card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 15px 35px rgba(50,30,10,.1);
 }
 
-.service-icon{
-    width:75px;
-    height:75px;
-    margin:0 auto 18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:white;
-    font-size:38px;
-    box-shadow:0 8px 20px rgba(0,0,0,.07);
+.icon{
+  width:75px;
+  height:75px;
+  background:white;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto 15px;
+  font-size:40px;
 }
 
-.service-card h3{
-    color:var(--brown);
-    margin-bottom:8px;
+.card h3{
+  color:var(--brown);
+  margin-bottom:8px;
 }
 
-.service-card p{
-    color:#70675f;
-    font-size:14px;
+.card p{
+  color:#70655c;
+  font-size:14px;
 }
 
-/* =========================
-   OFFERS
-========================= */
-
-.offer-section{
-    background:
-    linear-gradient(135deg,#4b2e1d,#241710);
-    color:white;
+/* OFFER */
+.offer{
+  background:linear-gradient(135deg,#4b2e1d,#21150e);
+  color:white;
 }
 
 .offer-box{
-    max-width:1050px;
-    margin:auto;
-    padding:45px;
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:28px;
-    text-align:center;
-    background:rgba(255,255,255,.05);
-}
-
-.offer-box .tag{
-    display:inline-block;
-    background:var(--gold);
-    color:#3b2615;
-    padding:6px 15px;
-    border-radius:20px;
-    font-weight:bold;
-    font-size:12px;
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+  padding:42px 20px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:25px;
 }
 
 .offer-box h2{
-    font-size:38px;
-    margin:12px 0;
+  font-size:35px;
+  margin:10px 0;
 }
 
 .offer-box p{
-    color:#e9dbcb;
+  color:#e8d9c9;
+  margin-bottom:18px;
 }
 
-/* =========================
-   PRODUCTS
-========================= */
-
-.products-section{
-    background:#f8f1e6;
+/* PRODUCTS */
+.products{
+  background:#f8f0e4;
 }
 
-.search-area{
-    max-width:650px;
-    margin:0 auto 45px;
-    position:relative;
+.search{
+  max-width:650px;
+  margin:0 auto 40px;
 }
 
-.search-area input{
-    width:100%;
-    padding:17px 22px;
-    border:2px solid #ead5b6;
-    border-radius:35px;
-    outline:none;
-    font-size:16px;
-    background:white;
+.search input{
+  width:100%;
+  padding:16px 20px;
+  border:2px solid #e8d2ae;
+  border-radius:35px;
+  font-size:16px;
+  outline:none;
+  background:white;
 }
 
-.search-area input:focus{
-    border-color:var(--orange);
-    box-shadow:0 5px 20px rgba(232,137,34,.1);
+.search input:focus{
+  border-color:var(--orange);
 }
 
 .product-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
-.product-card{
-    background:white;
-    padding:28px 22px;
-    border-radius:22px;
-    border:1px solid #eadfce;
-    box-shadow:0 8px 28px rgba(60,40,20,.06);
-    transition:.35s;
+.product{
+  background:white;
+  padding:25px 20px;
+  border-radius:20px;
+  border:1px solid #eadcca;
+  box-shadow:0 7px 25px rgba(50,30,10,.06);
 }
 
-.product-card:hover{
-    transform:translateY(-7px);
-    box-shadow:var(--shadow);
+.product-icon{
+  width:85px;
+  height:85px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  background:#fff2d6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:48px;
 }
 
-.product-top{
-    text-align:center;
-    padding-bottom:15px;
-    border-bottom:1px solid #eee5d9;
-}
-
-.product-image{
-    width:90px;
-    height:90px;
-    margin:0 auto 15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#fff5df;
-    font-size:50px;
-}
-
-.product-top h3{
-    color:var(--brown);
-    font-size:22px;
+.product h3{
+  text-align:center;
+  color:var(--brown);
+  font-size:22px;
 }
 
 .category{
-    display:inline-block;
-    margin-top:8px;
-    padding:5px 11px;
-    border-radius:15px;
-    background:#fff0d2;
-    color:#a0600d;
-    font-size:11px;
-    font-weight:bold;
+  display:block;
+  width:max-content;
+  margin:8px auto 15px;
+  background:#fff0d0;
+  color:#995a08;
+  padding:4px 11px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:bold;
 }
 
-.price-note{
-    margin:17px 0;
-    padding:11px;
-    border-radius:10px;
-    background:#faf6ef;
-    color:#756657;
-    text-align:center;
-    font-size:13px;
-}
-
-.product-list{
-    display:flex;
-    flex-direction:column;
-    gap:9px;
+.note{
+  background:#faf6ef;
+  color:#76695e;
+  text-align:center;
+  padding:9px;
+  border-radius:9px;
+  font-size:12px;
+  margin-bottom:13px;
 }
 
 .product-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:7px;
-    padding:9px 0;
-    border-bottom:1px dashed #eadfd1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:9px 0;
+  border-bottom:1px dashed #e5dacb;
 }
 
 .product-row:last-child{
-    border-bottom:none;
+  border-bottom:none;
 }
 
 .product-name{
-    color:#514941;
-    font-size:14px;
-    flex:1;
+  flex:1;
+  color:#514941;
+  font-size:14px;
 }
 
-.add-btn{
-    border:none;
-    background:var(--orange);
-    color:white;
-    padding:7px 11px;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.2s;
+.add{
+  border:0;
+  background:var(--orange);
+  color:white;
+  padding:7px 11px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-.add-btn:hover{
-    background:#c96c0d;
-    transform:scale(1.05);
+.add:hover{
+  background:#c9630d;
 }
 
-.ask-price{
-    width:100%;
-    margin-top:15px;
-    display:block;
-    text-align:center;
-    padding:10px;
-    border-radius:9px;
-    background:#25d366;
-    color:white;
-    font-size:13px;
-    font-weight:bold;
+.price-btn{
+  display:block;
+  text-align:center;
+  margin-top:15px;
+  background:#25d366;
+  color:white;
+  padding:10px;
+  border-radius:9px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:bold;
 }
 
-/* =========================
-   CART
-========================= */
-
-.cart-box{
-    max-width:850px;
-    margin:55px auto 0;
-    background:white;
-    border-radius:25px;
-    padding:30px;
-    border:2px solid #edd6ae;
-    box-shadow:var(--shadow);
+/* CART */
+.cart{
+  max-width:850px;
+  margin:50px auto 0;
+  background:white;
+  padding:27px;
+  border-radius:22px;
+  border:2px solid #ead1a8;
+  box-shadow:0 12px 35px rgba(50,30,10,.08);
 }
 
-.cart-title{
-    text-align:center;
-    color:var(--brown);
-    margin-bottom:20px;
-    font-size:25px;
+.cart h2{
+  text-align:center;
+  color:var(--brown);
+  margin-bottom:20px;
 }
 
 .cart-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    padding:15px 5px;
-    border-bottom:1px solid #eee;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:13px 5px;
+  border-bottom:1px solid #eee;
 }
 
 .quantity{
-    display:flex;
-    align-items:center;
-    gap:9px;
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 
 .quantity button{
-    width:32px;
-    height:32px;
-    border:none;
-    border-radius:8px;
-    background:var(--orange);
-    color:white;
-    font-size:18px;
-    cursor:pointer;
+  width:32px;
+  height:32px;
+  border:0;
+  border-radius:7px;
+  background:var(--orange);
+  color:white;
+  font-size:18px;
+  cursor:pointer;
 }
 
 .quantity span{
-    min-width:25px;
-    text-align:center;
-    font-weight:bold;
+  min-width:25px;
+  text-align:center;
+  font-weight:bold;
 }
 
-.empty-cart{
-    text-align:center;
-    padding:20px;
-    color:#888;
+.empty{
+  text-align:center;
+  color:#888;
+  padding:15px;
 }
 
-.order-button{
-    width:100%;
-    border:none;
-    background:#25d366;
-    color:white;
-    padding:16px;
-    border-radius:11px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:20px;
+.order{
+  width:100%;
+  border:0;
+  background:#25d366;
+  color:white;
+  padding:15px;
+  border-radius:10px;
+  margin-top:20px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.clear-button{
-    width:100%;
-    border:none;
-    background:#eee;
-    color:#555;
-    padding:11px;
-    border-radius:10px;
-    cursor:pointer;
-    margin-top:9px;
+.clear{
+  width:100%;
+  border:0;
+  background:#eee;
+  color:#555;
+  padding:10px;
+  border-radius:9px;
+  margin-top:8px;
+  cursor:pointer;
 }
 
-/* =========================
-   ABOUT
-========================= */
-
-.about-section{
-    background:white;
+/* ABOUT */
+.about{
+  background:white;
 }
 
 .about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:45px;
-    align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
 }
 
 .about-text h2{
-    color:var(--brown);
-    font-size:38px;
-    margin-bottom:18px;
+  color:var(--brown);
+  font-size:37px;
+  margin-bottom:15px;
 }
 
 .about-text p{
-    color:#675f57;
-    margin-bottom:15px;
+  color:#675e56;
+  margin-bottom:14px;
 }
 
-.check-list{
-    list-style:none;
-    margin-top:20px;
+.list{
+  list-style:none;
+  margin-top:15px;
 }
 
-.check-list li{
-    padding:8px 0;
-    color:#514941;
+.list li{
+  padding:7px 0;
+  color:#554b43;
 }
 
-.check-list li::before{
-    content:"✓";
-    color:var(--green);
-    font-weight:bold;
-    margin-right:10px;
+.list li::before{
+  content:"✓";
+  color:var(--green);
+  font-weight:bold;
+  margin-right:10px;
 }
 
-.about-card{
-    background:var(--cream);
-    border:1px solid #efdfc8;
-    padding:35px;
-    border-radius:25px;
+.info-card{
+  background:var(--cream);
+  padding:30px;
+  border-radius:22px;
+  border:1px solid #eddcc4;
 }
 
-.about-card h3{
-    color:var(--brown);
-    margin-bottom:18px;
+.info-card h3{
+  color:var(--brown);
+  margin-bottom:15px;
 }
 
-.about-info{
-    display:grid;
-    gap:12px;
+.info-item{
+  background:white;
+  padding:12px;
+  margin:9px 0;
+  border-radius:10px;
 }
 
-.about-info div{
-    background:white;
-    padding:12px;
-    border-radius:10px;
-}
-
-/* =========================
-   REVIEWS
-========================= */
-
+/* REVIEWS */
 .reviews{
-    background:#f8f3eb;
+  background:#f8f3eb;
 }
 
-.review-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.review-card{
-    background:white;
-    padding:28px;
-    border-radius:20px;
-    box-shadow:0 7px 25px rgba(0,0,0,.05);
+.review{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 7px 22px rgba(0,0,0,.05);
 }
 
 .stars{
-    color:#f2a516;
-    letter-spacing:2px;
-    margin-bottom:12px;
+  color:#f2a516;
+  font-size:18px;
+  margin-bottom:8px;
 }
 
-.review-card p{
-    color:#665d54;
-    font-style:italic;
+.review p{
+  color:#655d55;
+  font-style:italic;
 }
 
-.review-card h4{
-    color:var(--brown);
-    margin-top:15px;
+.review h4{
+  color:var(--brown);
+  margin-top:12px;
 }
 
-/* =========================
-   CONTACT
-========================= */
-
-.contact-section{
-    background:var(--dark);
-    color:white;
+/* CONTACT */
+.contact{
+  background:var(--dark);
+  color:white;
 }
 
-.contact-box{
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+.contact .heading h2{
+  color:white;
+}
+
+.contact .heading p{
+  color:#d9cec1;
+}
+
+.contact-grid{
+  max-width:950px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
 }
 
 .contact-card{
-    padding:35px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:22px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
 }
 
 .contact-card h3{
-    color:var(--gold);
-    margin-bottom:18px;
-    font-size:24px;
+  color:var(--gold);
+  font-size:23px;
+  margin-bottom:13px;
 }
 
 .contact-card p{
-    color:#e4d9cc;
-    margin:10px 0;
+  color:#dfd3c6;
+  margin:8px 0;
 }
 
-.contact-number{
-    font-size:27px;
-    font-weight:bold;
-    color:white !important;
+.number{
+  color:white!important;
+  font-size:26px;
+  font-weight:bold;
 }
 
 .contact-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:20px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
 }
 
 .contact-buttons a{
-    padding:12px 17px;
-    border-radius:10px;
-    background:var(--orange);
-    color:white;
-    font-weight:bold;
-    font-size:14px;
+  padding:11px 16px;
+  background:var(--orange);
+  color:white;
+  border-radius:9px;
+  font-weight:bold;
+  font-size:13px;
 }
 
-.contact-buttons a.whatsapp{
-    background:#25d366;
+.contact-buttons .wa{
+  background:#25d366;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer{
-    background:#0d0a08;
-    color:white;
-    text-align:center;
-    padding:35px 20px;
+  background:#0c0907;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
 }
 
-.footer-brand{
-    font-size:22px;
-    font-weight:bold;
-    color:var(--gold);
+.footer-name{
+  color:var(--gold);
+  font-size:21px;
+  font-weight:bold;
 }
 
 footer p{
-    color:#bdb2a7;
-    font-size:13px;
-    margin-top:6px;
+  color:#bcb1a6;
+  font-size:13px;
+  margin-top:5px;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+/* ANIMATION */
+@keyframes up{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-@keyframes fadeRight{
-    from{
-        opacity:0;
-        transform:translateX(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
+@keyframes right{
+  from{
+    opacity:0;
+    transform:translateX(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
 }
 
-/* =========================
-   MOBILE
-========================= */
-
+/* MOBILE */
 @media(max-width:900px){
 
-    .nav-inner{
-        flex-direction:column;
-    }
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 
-    .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-        padding-top:45px;
-    }
+  .hero-text{
+    order:1;
+  }
 
-    .hero-content{
-        order:1;
-    }
+  .hero-image{
+    order:2;
+  }
 
-    .hero-photo{
-        order:2;
-    }
+  .buttons{
+    justify-content:center;
+  }
 
-    .hero-buttons,
-    .hero-info{
-        justify-content:center;
-    }
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-    .hero h1{
-        font-size:43px;
-    }
+  .stat:nth-child(2){
+    border-right:none;
+  }
 
-    .stats-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+  .cards,
+  .product-grid,
+  .review-grid{
+    grid-template-columns:1fr 1fr;
+  }
 
-    .stat:nth-child(2){
-        border-right:none;
-    }
-
-    .service-grid,
-    .product-grid,
-    .review-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .about-grid,
-    .contact-box{
-        grid-template-columns:1fr;
-    }
-
+  .about-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 @media(max-width:600px){
 
-    .nav-links{
-        width:100%;
-    }
+  .logo{
+    font-size:18px;
+  }
 
-    .nav-links a{
-        font-size:11px;
-        padding:6px 8px;
-    }
+  nav a{
+    font-size:11px;
+    padding:6px 8px;
+  }
 
-    .hero{
-        padding:35px 15px;
-    }
+  .hero{
+    padding:40px 15px;
+  }
 
-    .hero h1{
-        font-size:35px;
-    }
+  .hero h1{
+    font-size:36px;
+  }
 
-    .hero-subtitle{
-        font-size:16px;
-    }
+  .hero h2{
+    font-size:18px;
+  }
 
-    .photo-badge{
-        right:8px;
-        bottom:12px;
-        padding:10px;
-    }
+  .hero p{
+    font-size:15px;
+  }
 
-    .photo-badge strong{
-        font-size:15px;
-    }
+  section{
+    padding:60px 15px;
+  }
 
-    .section{
-        padding:60px 15px;
-    }
+  .heading h2{
+    font-size:29px;
+  }
 
-    .section-heading h2{
-        font-size:30px;
-    }
+  .cards,
+  .product-grid{
+    grid-template-columns:1fr;
+  }
 
-    .stats-grid{
-        grid-template-columns:1fr 1fr;
-    }
+  .offer-box h2{
+    font-size:28px;
+  }
 
-    .service-grid,
-    .product-grid,
-    .review-grid{
-        grid-template-columns:1fr;
-    }
+  .about-text h2{
+    font-size:30px;
+  }
 
-    .offer-box{
-        padding:30px 20px;
-    }
-
-    .offer-box h2{
-        font-size:29px;
-    }
-
-    .product-row{
-        align-items:flex-start;
-    }
-
-    .cart-item{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .contact-card{
-        padding:25px 20px;
-    }
+  .cart-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
 
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 
-<!-- =========================
-     NAVBAR
-========================= -->
-
-<header class="navbar">
-
-<div class="nav-inner">
+<nav>
 
 <div class="logo">
-🛒 <span>Vitthal Krupa</span> Kirana
+🛒 <span>Vitthal Krupa</span> Kirana Store
 </div>
-
-<nav class="nav-links">
 
 <a href="#home">Home</a>
 <a href="#services">Services</a>
@@ -1033,21 +868,15 @@ footer p{
 
 </nav>
 
-</div>
 
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-<div class="hero-content">
+<div class="hero-text">
 
-<div class="small-label">
-🏪 आपले स्वागत आहे
+<div class="badge">
+🏪 आपल्या सेवेत सदैव
 </div>
 
 <h1>
@@ -1055,61 +884,46 @@ Vitthal Krupa
 <span>Kirana Store</span>
 </h1>
 
-<p class="hero-subtitle">
-आपल्या रोजच्या गरजेच्या वस्तू,
-किराणा माल, चटणी मसाला आणि
-Cold Drinks — एकाच ठिकाणी.
+<h2>
+आपल्या रोजच्या गरजेच्या वस्तूंचे विश्वासू दुकान
+</h2>
+
+<p>
+किराणा माल • चटणी मसाला • विविध मसाले •
+Cold Drinks • दैनंदिन वापराच्या वस्तू
 </p>
 
-<div class="hero-buttons">
+<div class="open-time">
+🟢 सकाळी 7:00 ते रात्री 11:00
+</div>
 
-<a href="#products" class="primary-btn">
+<div class="buttons">
+
+<a href="#products" class="btn btn-main">
 🛍️ Products पाहा
 </a>
 
-<a href="#contact" class="secondary-btn">
+<a href="#contact" class="btn btn-light">
 📞 Contact करा
 </a>
 
 </div>
 
-<div class="hero-info">
-
-<div>
-🕐 <b>7 AM – 11 PM</b>
-</div>
-
-<div>
-📍 <b>Kapileshwar</b>
-</div>
-
-<div>
-💬 <b>WhatsApp Order</b>
-</div>
-
-</div>
-
 </div>
 
 
-<div class="hero-photo">
+<div class="hero-image">
 
-<div class="photo-frame">
+<div class="photo-box">
 
-<img
-src="shop-photo.jpg"
+<img src="shop-photo.jpg"
 alt="Vitthal Krupa Kirana Store">
 
 </div>
 
-<div class="photo-badge">
-
+<div class="open-badge">
 🟢 OPEN
-
-<strong>
-7 AM – 11 PM
-</strong>
-
+<strong>7 AM – 11 PM</strong>
 </div>
 
 </div>
@@ -1117,55 +931,34 @@ alt="Vitthal Krupa Kirana Store">
 </section>
 
 
-<!-- =========================
-     STATS
-========================= -->
+<!-- STATS -->
 
 <section class="stats">
 
 <div class="stats-grid">
 
 <div class="stat">
-
 <div class="stat-icon">🛒</div>
-
 <h3>100+</h3>
-
 <p>Daily Products</p>
-
 </div>
 
-
 <div class="stat">
-
 <div class="stat-icon">🌶️</div>
-
 <h3>Fresh</h3>
-
 <p>Masala & Grocery</p>
-
 </div>
 
-
 <div class="stat">
-
 <div class="stat-icon">💬</div>
-
 <h3>WhatsApp</h3>
-
 <p>Easy Ordering</p>
-
 </div>
 
-
 <div class="stat">
-
 <div class="stat-icon">🕐</div>
-
 <h3>7–11</h3>
-
 <p>Open Daily</p>
-
 </div>
 
 </div>
@@ -1173,19 +966,15 @@ alt="Vitthal Krupa Kirana Store">
 </section>
 
 
-<!-- =========================
-     SERVICES
-========================= -->
+<!-- SERVICES -->
 
-<section class="section services" id="services">
+<section class="services" id="services">
 
-<div class="section-inner">
+<div class="container">
 
-<div class="section-heading">
+<div class="heading">
 
-<div class="eyebrow">
-What We Offer
-</div>
+<small>OUR SERVICES</small>
 
 <h2>आमच्या सेवा</h2>
 
@@ -1193,20 +982,17 @@ What We Offer
 
 <p>
 आपल्या रोजच्या गरजा पूर्ण करण्यासाठी
-सोप्या आणि विश्वासू सेवा.
+विश्वासू आणि सोयीस्कर सेवा.
 </p>
 
 </div>
 
 
-<div class="service-grid">
+<div class="cards">
 
+<div class="card">
 
-<div class="service-card">
-
-<div class="service-icon">
-🛒
-</div>
+<div class="icon">🛒</div>
 
 <h3>किराणा माल</h3>
 
@@ -1218,11 +1004,9 @@ What We Offer
 </div>
 
 
-<div class="service-card">
+<div class="card">
 
-<div class="service-icon">
-🌶️
-</div>
+<div class="icon">🌶️</div>
 
 <h3>चटणी व मसाले</h3>
 
@@ -1234,11 +1018,9 @@ What We Offer
 </div>
 
 
-<div class="service-card">
+<div class="card">
 
-<div class="service-icon">
-🥤
-</div>
+<div class="icon">🥤</div>
 
 <h3>Cold Drinks</h3>
 
@@ -1249,7 +1031,6 @@ What We Offer
 
 </div>
 
-
 </div>
 
 </div>
@@ -1257,17 +1038,15 @@ What We Offer
 </section>
 
 
-<!-- =========================
-     OFFER
-========================= -->
+<!-- OFFER -->
 
-<section class="section offer-section">
+<section class="offer">
 
 <div class="offer-box">
 
-<span class="tag">
+<div class="badge">
 SPECIAL
-</span>
+</div>
 
 <h2>
 🎉 आजच आपल्या दुकानाला भेट द्या!
@@ -1277,7 +1056,7 @@ SPECIAL
 चांगली सेवा • योग्य दर • ग्राहकांचा विश्वास
 </p>
 
-<a href="#products" class="primary-btn">
+<a href="#products" class="btn btn-main">
 🛍️ Shopping सुरू करा
 </a>
 
@@ -1286,35 +1065,29 @@ SPECIAL
 </section>
 
 
-<!-- =========================
-     PRODUCTS
-========================= -->
+<!-- PRODUCTS -->
 
-<section class="section products-section" id="products">
+<section class="products" id="products">
 
-<div class="section-inner">
+<div class="container">
 
-<div class="section-heading">
+<div class="heading">
 
-<div class="eyebrow">
-Our Products
-</div>
+<small>OUR PRODUCTS</small>
 
-<h2>आमची उत्पादने</h2>
+<h2>आमची उत्पादने 🛍️</h2>
 
 <div class="line"></div>
 
 <p>
-तुमच्या आवडीचे products शोधा आणि
-Cart मध्ये add करून WhatsApp वर Order करा.
+Product शोधा, Cart मध्ये add करा
+आणि WhatsApp वर Order करा.
 </p>
 
 </div>
 
 
-<!-- SEARCH -->
-
-<div class="search-area">
+<div class="search">
 
 <input
 type="text"
@@ -1330,76 +1103,236 @@ onkeyup="searchProducts()">
 
 <!-- KIRANA -->
 
-<div class="product-card product">
+<div class="product">
 
-<div class="product-top">
-
-<div class="product-image">
-🌾
-</div>
+<div class="product-icon">🌾</div>
 
 <h3>किराणा माल</h3>
 
-<span class="category">
-KIRANA
-</span>
+<span class="category">KIRANA</span>
 
-</div>
-
-<div class="price-note">
+<div class="note">
 💰 किंमत माहितीसाठी WhatsApp करा
 </div>
 
-<div class="product-list">
-
 
 <div class="product-row">
+<span class="product-name">🍚 तांदूळ (Rice)</span>
+<button class="add" onclick="addToCart('तांदूळ')">Add</button>
+</div>
 
-<span class="product-name">
-🍚 तांदूळ (Rice)
-</span>
+<div class="product-row">
+<span class="product-name">🌾 गहू (Wheat)</span>
+<button class="add" onclick="addToCart('गहू')">Add</button>
+</div>
 
-<button class="add-btn"
-onclick="addToCart('तांदूळ')">
-Add
-</button>
+<div class="product-row">
+<span class="product-name">🫘 तूर डाळ (Toor Dal)</span>
+<button class="add" onclick="addToCart('तूर डाळ')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🍬 साखर (Sugar)</span>
+<button class="add" onclick="addToCart('साखर')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🛢️ खाद्यतेल (Cooking Oil)</span>
+<button class="add" onclick="addToCart('खाद्यतेल')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧂 मीठ (Salt)</span>
+<button class="add" onclick="addToCart('मीठ')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🍪 बिस्किटे (Biscuits)</span>
+<button class="add" onclick="addToCart('बिस्किटे')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧴 साबण (Soap)</span>
+<button class="add" onclick="addToCart('साबण')">Add</button>
+</div>
+
+<a
+class="price-btn"
+href="https://wa.me/919049355633?text=नमस्कार,%20मला%20किराणा%20मालाची%20किंमत%20माहिती%20हवी%20आहे."
+target="_blank">
+💬 किंमत विचारा
+</a>
 
 </div>
 
 
-<div class="product-row">
+<!-- CHATANI MASALA -->
 
-<span class="product-name">
-🌾 गहू (Wheat)
-</span>
+<div class="product">
 
-<button class="add-btn"
-onclick="addToCart('गहू')">
-Add
-</button>
+<div class="product-icon">🌶️</div>
 
+<h3>चटणी व मसाले</h3>
+
+<span class="category">MASALA</span>
+
+<div class="note">
+💰 किंमत माहितीसाठी WhatsApp करा
 </div>
 
 
 <div class="product-row">
+<span class="product-name">🌶️ चटणी मसाला</span>
+<button class="add" onclick="addToCart('चटणी मसाला')">Add</button>
+</div>
 
-<span class="product-name">
-🫘 तूर डाळ
-</span>
+<div class="product-row">
+<span class="product-name">🌶️ लाल तिखट</span>
+<button class="add" onclick="addToCart('लाल तिखट')">Add</button>
+</div>
 
-<button class="add-btn"
-onclick="addToCart('तूर डाळ')">
-Add
-</button>
+<div class="product-row">
+<span class="product-name">🟡 हळद</span>
+<button class="add" onclick="addToCart('हळद')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🌿 धणे पावडर</span>
+<button class="add" onclick="addToCart('धणे पावडर')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🌿 जिरे पावडर</span>
+<button class="add" onclick="addToCart('जिरे पावडर')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧂 गरम मसाला</span>
+<button class="add" onclick="addToCart('गरम मसाला')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🌿 किचन किंग मसाला</span>
+<button class="add" onclick="addToCart('किचन किंग मसाला')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🌶️ सांबार मसाला</span>
+<button class="add" onclick="addToCart('सांबार मसाला')">Add</button>
+</div>
+
+<a
+class="price-btn"
+href="https://wa.me/919049355633?text=नमस्कार,%20मला%20चटणी%20व%20मसाल्यांची%20किंमत%20माहिती%20हवी%20आहे."
+target="_blank">
+💬 किंमत विचारा
+</a>
 
 </div>
 
 
+<!-- DAILY USE -->
+
+<div class="product">
+
+<div class="product-icon">🏠</div>
+
+<h3>दैनंदिन वस्तू</h3>
+
+<span class="category">DAILY USE</span>
+
+<div class="note">
+💰 किंमत माहितीसाठी WhatsApp करा
+</div>
+
+
 <div class="product-row">
+<span class="product-name">🧴 साबण</span>
+<button class="add" onclick="addToCart('साबण')">Add</button>
+</div>
 
-<span class="product-name">
-🍬 साखर
-</span>
+<div class="product-row">
+<span class="product-name">🧼 डिटर्जंट</span>
+<button class="add" onclick="addToCart('डिटर्जंट')">Add</button>
+</div>
 
-<button class="add-btn"
-oncli
+<div class="product-row">
+<span class="product-name">🪥 टूथपेस्ट</span>
+<button class="add" onclick="addToCart('टूथपेस्ट')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧴 शॅम्पू</span>
+<button class="add" onclick="addToCart('शॅम्पू')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🥤 Cold Drinks</span>
+<button class="add" onclick="addToCart('Cold Drinks')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧹 घरगुती वस्तू</span>
+<button class="add" onclick="addToCart('घरगुती वस्तू')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧻 पेपर वस्तू</span>
+<button class="add" onclick="addToCart('पेपर वस्तू')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🧽 Cleaning Products</span>
+<button class="add" onclick="addToCart('Cleaning Products')">Add</button>
+</div>
+
+<a
+class="price-btn"
+href="https://wa.me/919049355633?text=नमस्कार,%20मला%20दैनंदिन%20वस्तूंची%20किंमत%20माहिती%20हवी%20आहे."
+target="_blank">
+💬 किंमत विचारा
+</a>
+
+</div>
+
+
+<!-- SNACKS -->
+
+<div class="product">
+
+<div class="product-icon">🍪</div>
+
+<h3>Snacks & Biscuits</h3>
+
+<span class="category">SNACKS</span>
+
+<div class="note">
+💰 किंमत माहितीसाठी WhatsApp करा
+</div>
+
+<div class="product-row">
+<span class="product-name">🍪 बिस्किटे</span>
+<button class="add" onclick="addToCart('बिस्किटे')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🥔 वेफर्स</span>
+<button class="add" onclick="addToCart('वेफर्स')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🍿 स्नॅक्स</span>
+<button class="add" onclick="addToCart('स्नॅक्स')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🍫 चॉकलेट</span>
+<button class="add" onclick="addToCart('चॉकलेट')">Add</button>
+</div>
+
+<div class="product-row">
+<span class="product-name">🍬 टॉफी</span>
+<button class="add" onclick="addToCart('टॉफी')">Add</button>
+</div>
+
+<a
